@@ -1,0 +1,19 @@
+<h3>Weather Table</h3>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Description</th>
+        <th>Icon</th>
+        <th>Main</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let weather of weather">
+        <td>{{weather?.id}}</td>
+        <td>{{weather?.description }}</td>
+        <td>{{weather?.icon}}</td>
+        <td>{{weather?.main}}</td>
+      </tr>
+    </tbody>
+  </table>

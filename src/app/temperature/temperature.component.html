@@ -1,0 +1,27 @@
+<h3>Temperature Table</h3>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Grnd Level</th>
+        <th>Humidity</th>
+        <th>Pressure</th>
+        <th>Sea Level</th>
+        <th>Temp</th>
+        <th>Temp_KF</th>
+        <th>Temp_Max</th>
+        <th>Temp_Min</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let temp of temperature">
+        <td>{{temp?.grnd_level | degree}}</td>
+        <td>{{temp?.humidity  | degree}}</td>
+        <td>{{temp?.pressure | degree}}</td>
+        <td>{{temp?.sea_level | degree}}</td>
+        <td>{{temp?.temp | degree}}</td>
+        <td>{{temp?.temp_kf | degree}}</td>
+        <td>{{temp?.temp_max | degree}}</td>
+        <td>{{temp?.temp_min | degree}}</td>
+      </tr>
+    </tbody>
+  </table>
