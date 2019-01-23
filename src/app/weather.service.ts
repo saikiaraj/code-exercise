@@ -13,7 +13,10 @@ export class WeatherService {
 
   getWeatherforecastData() : Observable<Weatherforecast> {
     let path = 'http://api.openweathermap.org/data/2.5/forecast?id=2643743&appid=416f21735638892910fc788dbd92dc24';
-    return this._http.get<Weatherforecast>(path);
+    return this._http.get<Weatherforecast>(path).pipe(
+      retry(1),
+      catchError(this.handleError)
+    );
   }
   handleError(error) {
     let errorMessage = '';
