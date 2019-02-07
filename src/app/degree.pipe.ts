@@ -9,6 +9,8 @@ export class DegreePipe implements PipeTransform {
     if(value && !isNaN(value)){
       let tempareature = (value - 32) * 5/9 ;
       return tempareature.toFixed(2) + ' C';
+    } else if( value === 0){
+      return '0 C'
     }
     return null;
   }
